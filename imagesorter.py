@@ -112,7 +112,7 @@ class ImageSorter(object):
         self.index = -1
         
         self.frmHeader = LabelFrame(self.window)
-        self.frmHeader.grid(row = 0)
+        self.frmHeader.pack()
         self.lblFormats = Label(self.frmHeader, text = 'Searched for:')
         self.lblFormats.grid(row = 0, column = 0, padx = 10)
         self.formats = StringVar(value = 'jpg;png')
@@ -125,16 +125,16 @@ class ImageSorter(object):
 
         self.blackground = ImageTk.PhotoImage(Image.open('blackground.png').resize(self.size))
         self.frmImg = Label(self.window, image = self.blackground)
-        self.frmImg.grid(row = 1)
+        self.frmImg.pack()
 
-        self.frmButtons = Label(self.window)
+        self.frmButtons = Label(self.window)  
         self.btnLeft = Button(self.frmButtons, text = '<', command = self.previous)
         self.btnLeft.grid(row = 0, column = 0, ipadx = int(0.15 * screen_width), ipady = 10)
         self.btnDelete = Button(self.frmButtons, text = 'Delete', command = self.trash)
         self.btnDelete.grid(row = 0, column = 1, ipadx = int(0.15 * screen_width), ipady = 10)
         self.btnRight = Button(self.frmButtons, text = '>', command = self.next)
         self.btnRight.grid(row = 0, column = 2, ipadx = int(0.15 * screen_width), ipady = 10)
-        self.frmButtons.grid(row = 2)
+        self.frmButtons.pack()
         self.setBtnState('disabled')
         
         self.window.mainloop()

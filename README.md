@@ -25,10 +25,13 @@ Functions:
 
 3. 'Delete' button: The actually choosed image will be moved to a 'trash' subdirectory in your actually choosen directory.
 
-
-# Further ideas
+# Bugfixes
 
 a. 'Bug: buttons disappear while switching through images' issue from @marcelpetrick
+
+-> using '.pack()' for the three main widgets instead of '.grid(...)' solves it
+
+# Further ideas
 
 b. Include upper case endings automatically in the 'Searched for' textbox.
 
