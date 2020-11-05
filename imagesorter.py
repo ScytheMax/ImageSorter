@@ -18,7 +18,7 @@ class ImageSorter(object):
         
     def formatCheck(self, file):
         for format in self.formats.get().split(';'):
-            if format in file and len(format) > 0:
+            if format in file.lower() and len(format) > 0:
                 return True
         return False
 

@@ -18,6 +18,7 @@ Functions:
 
 -> pre filled with jpg and png
 -> for example you want to add 'jpeg', then write semicolon and 'jpeg' (result in textbox then 'jpg;png;jpeg')
+-> uppercase endings are included ('jpg' searches also for 'Jpg' and 'JPG') 
 
 2. 'Directory' button: Opens a directory dialog. Choose your image directory.
 
@@ -33,10 +34,8 @@ a. 'Bug: buttons disappear while switching through images' issue from @marcelpet
 
 # Further ideas
 
-b. Include upper case endings automatically in the 'Searched for' textbox.
-
--> Issue: In your directory are images with ending 'JPG'. Then the ImageSorter don't load any image.
-
 c. Counting label to see the image size of the directory and the running number of the actually choosen image.
 
 -> Idea: 'Image 33 of 57'
+
+d. Using arrow keys for switching images. Using delete key for deleting the actually image.
