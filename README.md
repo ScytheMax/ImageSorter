@@ -20,7 +20,8 @@ Functions:
 -> for example you want to add 'jpeg', then write semicolon and 'jpeg' (result in textbox then 'jpg;png;jpeg')
 -> uppercase endings are included ('jpg' searches also for 'Jpg' and 'JPG') 
 
-2. 'Directory' button: Opens a directory dialog. Choose your image directory.
+2. 'Directory' button: Opens a directory dialog. Choose your image directory. After choosing a directory
+	the running image number and the total image number of this directory is shown.
 
 3. '<' and '>' buttons: Click on it to go the previous or next image.
 
@@ -33,9 +34,5 @@ a. 'Bug: buttons disappear while switching through images' issue from @marcelpet
 -> using '.pack()' for the three main widgets instead of '.grid(...)' solves it
 
 # Further ideas
-
-c. Counting label to see the image size of the directory and the running number of the actually choosen image.
-
--> Idea: 'Image 33 of 57'
 
 d. Using arrow keys for switching images. Using delete key for deleting the actually image.

@@ -11,6 +11,7 @@ class ImageSorter(object):
 
     def defaultValues(self):
         self.lblDir.configure(text = '...')
+        self.lblCounter.configure(text = "-/-")
         self.filenames = []
         self.index = -1
         self.frmImg.configure(image = self.blackground)
@@ -34,6 +35,7 @@ class ImageSorter(object):
                 raise Exception(EMPTY_DIR)
 
             self.index = 0
+            self.updateCounter()
             self.updateImage()
             self.setBtnState('normal')
 
@@ -51,6 +53,7 @@ class ImageSorter(object):
             self.index -= 1
             if self.index < 0:
                 self.index = len(self.filenames) - 1
+            self.updateCounter()
             self.updateImage()
         except Exception as e:
             messagebox.showinfo('Error', 'Problem with: ' + e.args[0])
@@ -59,6 +62,7 @@ class ImageSorter(object):
         try:
             self.index += 1
             self.overMaxIndex()
+            self.updateCounter()
             self.updateImage()
         except Exception as e:
             messagebox.showinfo('Error', 'Problem with: ' + e.args[0])
@@ -77,6 +81,7 @@ class ImageSorter(object):
                 return
 
             self.overMaxIndex()
+            self.updateCounter()
             self.updateImage()
         except Exception as e:
             messagebox.showinfo('Error', 'Problem with: ' + e.args[0])
@@ -85,6 +90,9 @@ class ImageSorter(object):
         if self.index >= len(self.filenames):
             self.index = 0
     
+    def updateCounter(self):
+        self.lblCounter.configure(text = str(self.index + 1) + "/" + str(len(self.filenames)))
+
     def updateImage(self):
         load = Image.open(self.dir + '/' + self.filenames[self.index])
         HeightDivideByWidth = load.size[1] / load.size[0]
@@ -121,7 +129,9 @@ class ImageSorter(object):
         self.btnDir = Button(self.frmHeader, text = 'Directory:', command = self.setDir)
         self.btnDir.grid(row = 0, column = 2)
         self.lblDir = Label(self.frmHeader, text = '...')
-        self.lblDir.grid(row = 0, column = 3)
+        self.lblDir.grid(row = 0, column = 3, ipadx = 10)
+        self.lblCounter = Label(self.frmHeader, text = '-/-')
+        self.lblCounter.grid(row = 0, column = 4, ipadx = 20)
 
         self.blackground = ImageTk.PhotoImage(Image.open('blackground.png').resize(self.size))
         self.frmImg = Label(self.window, image = self.blackground)
