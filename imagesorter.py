@@ -44,9 +44,10 @@ class ImageSorter(object):
                 messagebox.showinfo('Message', 'No dir choosed.')
             elif e.args[0] == EMPTY_DIR:
                 messagebox.showinfo('Message', self.dir + ' is empty.')
+                self.defaultValues()
             else:
                 messagebox.showinfo('Error', 'Problem with: ' + e.args[0])        
-            self.defaultValues()
+                self.defaultValues()
 
     def previous(self):
         try:
