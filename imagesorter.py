@@ -110,7 +110,7 @@ class ImageSorter(object):
         self.btnLeft['state'] = state
         self.btnDelete['state'] = state
         self.btnRight['state'] = state
-        
+
     def __init__(self):
         self.window = Tk()
         screen_width = self.window.winfo_screenwidth()
@@ -124,7 +124,7 @@ class ImageSorter(object):
         self.frmHeader.pack()
         self.lblFormats = Label(self.frmHeader, text = 'Searched for:')
         self.lblFormats.grid(row = 0, column = 0, padx = 10)
-        self.formats = StringVar(value = 'jpg;png')
+        self.formats = StringVar(value = 'jpg;png;jpeg')
         self.txtFormats = Entry(self.frmHeader, textvariable = self.formats)
         self.txtFormats.grid(row = 0, column = 1, padx = 10)
         self.btnDir = Button(self.frmHeader, text = 'Directory:', command = self.setDir)

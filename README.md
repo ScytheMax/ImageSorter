@@ -16,8 +16,8 @@ Functions:
 
 1. 'Searched for' textbox: Define, for which image file endings you are searching.
 
--> pre filled with jpg and png
--> for example you want to add 'jpeg', then write semicolon and 'jpeg' (result in textbox then 'jpg;png;jpeg')
+-> pre filled with jpg, jpeg and png
+-> for example you want to add 'gif', then write semicolon and 'gif' (result in textbox then 'jpg;png;jpeg;gif')
 -> uppercase endings are included ('jpg' searches also for 'Jpg' and 'JPG') 
 
 2. 'Directory' button: Opens a directory dialog. Choose your image directory. After choosing a directory
