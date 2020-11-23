@@ -25,9 +25,11 @@ class ImageSorter(object):
 
     def setDir(self):
         try:
-            self.dir = filedialog.askdirectory()
-            if self.dir == '':
+            tmpdir = filedialog.askdirectory()
+            if tmpdir == '':
                 raise Exception(NO_DIR)
+            else:
+                self.dir = tmpdir
         
             self.lblDir.configure(text = self.dir)
             self.filenames = list(filter(self.formatCheck, listdir(self.dir)))
