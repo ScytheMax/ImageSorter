@@ -46,7 +46,7 @@ class ImageSorter(object):
                 messagebox.showinfo('Message', self.dir + ' is empty.')
                 self.defaultValues()
             else:
-                messagebox.showinfo('Error', 'Problem with: ' + e.args[0])        
+                messagebox.showinfo('Error', 'Problem with: ' + str(e))        
                 self.defaultValues()
 
     def previous(self):
@@ -57,7 +57,7 @@ class ImageSorter(object):
             self.updateCounter()
             self.updateImage()
         except Exception as e:
-            messagebox.showinfo('Error', 'Problem with: ' + e.args[0])
+            messagebox.showinfo('Error', 'Problem with: ' + str(e))
 
     def next(self):
         try:
@@ -66,7 +66,7 @@ class ImageSorter(object):
             self.updateCounter()
             self.updateImage()
         except Exception as e:
-            messagebox.showinfo('Error', 'Problem with: ' + e.args[0])
+            messagebox.showinfo('Error', 'Problem with: ' + str(e))
 
     def trash(self):
         try:
@@ -85,7 +85,7 @@ class ImageSorter(object):
             self.updateCounter()
             self.updateImage()
         except Exception as e:
-            messagebox.showinfo('Error', 'Problem with: ' + e.args[0])
+            messagebox.showinfo('Error', 'Problem with: ' + str(e))
 
     def overMaxIndex(self):
         if self.index >= len(self.filenames):
