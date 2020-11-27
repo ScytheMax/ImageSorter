@@ -16,6 +16,9 @@ class ImageSorter(object):
         self.index = -1
         self.frmImg.configure(image = self.blackground)
         self.setBtnState('disabled')
+        self.window.unbind('<Left>')
+        self.window.unbind('<Right>')
+        self.window.unbind('<Delete>')
         
     def formatCheck(self, file):
         for format in self.formats.get().split(';'):
@@ -41,6 +44,10 @@ class ImageSorter(object):
             self.updateImage()
             self.setBtnState('normal')
 
+            self.window.bind('<Left>', self.previousKey)
+            self.window.bind('<Right>', self.nextKey)
+            self.window.bind('<Delete>', self.trashKey)
+
         except Exception as e:
             if e.args[0] == NO_DIR:
                 messagebox.showinfo('Message', 'No dir choosed.')
@@ -61,6 +68,9 @@ class ImageSorter(object):
         except Exception as e:
             messagebox.showinfo('Error', 'Problem with: ' + str(e))
 
+    def previousKey(self, event):
+        self.previous()
+
     def next(self):
         try:
             self.index += 1
@@ -69,6 +79,9 @@ class ImageSorter(object):
             self.updateImage()
         except Exception as e:
             messagebox.showinfo('Error', 'Problem with: ' + str(e))
+
+    def nextKey(self, event):
+        self.next()
 
     def trash(self):
         try:
@@ -88,6 +101,9 @@ class ImageSorter(object):
             self.updateImage()
         except Exception as e:
             messagebox.showinfo('Error', 'Problem with: ' + str(e))
+
+    def trashKey(self, event):
+        self.trash()
 
     def overMaxIndex(self):
         if self.index >= len(self.filenames):

@@ -23,9 +23,10 @@ Functions:
 2. 'Directory' button: Opens a directory dialog. Choose your image directory. After choosing a directory
 	the running image number and the total image number of this directory is shown.
 
-3. '<' and '>' buttons: Click on it to go the previous or next image.
+3. '<' and '>' buttons: Click on it to go the previous or next image. Also you can use <Left> or <Right> keys.
 
-3. 'Delete' button: The actually choosed image will be moved to a 'trash' subdirectory in your actually choosen directory.
+4. 'Delete' button: The actually choosed image will be moved to a 'trash' subdirectory in your actually choosen directory.
+	Also you can use <Delete> key.
 
 # Bugfixes
 
@@ -34,5 +35,3 @@ a. 'Bug: buttons disappear while switching through images' issue from @marcelpet
 -> using '.pack()' for the three main widgets instead of '.grid(...)' solves it
 
 # Further ideas
-
-d. Using arrow keys for switching images. Using delete key for deleting the actually image.
